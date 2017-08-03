@@ -1,0 +1,32 @@
+
+#include<stdio.h>
+#include<Windows.h>
+#include<string.h>
+
+//用联合体判断内存大小端
+int check_sys()
+{
+	union 
+	{
+		int i;
+		char c;
+	}un;
+	un.i = 1;
+	return un.c;//返回1—>小端；返回0->大端；
+}
+
+int main()
+{
+	//判断内存的大小端
+	// int a = 1;
+	//01 00 00 00 小端
+
+	//00 00 00 01 大端
+	
+	if(1 == check_sys())
+		printf("该内存使用小端");
+	else
+		printf("该内存使用大端");
+	system("pause");
+	return 0;
+}
