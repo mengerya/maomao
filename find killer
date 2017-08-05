@@ -1,0 +1,20 @@
+
+
+#include<stdio.h>
+
+
+int main()
+{	
+	int i, sum=0;	
+	char killer=64;	
+	for(i=1;i<=4;i++)	
+	{
+		killer=killer+i;	
+		sum=(killer!='A')+(killer!='D')+(killer=='D')+(killer=='C');	
+		if(sum==3)	
+		{		
+			printf("凶手是：%c\n",killer);	
+		}		
+	}	
+	return 0;
+}
